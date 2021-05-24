@@ -1,25 +1,36 @@
-<%= form_with model: モデル名, local: true do |f|%>
+<%= form_with model: @product, local: true do |f|%>
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの名称" %><br />
-    <%= f.text_field :hoge, id:"prototype_title" %>
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title, class: :form__text, id:"product_title" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "キャッチコピー" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_catch_copy" %>
+    <%= f.label :category_id, "ジャンル" %><br />
+    <%= f.text_field :category_id, id:"product_category_id" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "コンセプト" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_concept" %>
+    <%= f.label :prefecture_id, "場所(都道府県)" %><br />
+    <%= f.text_field :prefecture_id, id:"product_prefecture_id" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの画像" %><br />
-    <%= f.file_field :hoge, id:"prototype_image" %>
+    <%= f.label :municipality, "場所(市区町村)" %><br />
+    <%= f.text_field :municipality, class: :form__text, id:"product_municipality" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "今回紹介するのは…" %><br />
+    <%= f.text_area :description, class: :form__text, id:"product_description" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "画像" %><br />
+    <%= f.file_field :image, id:"product_image" %>
   </div>
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
   </div>
 <% end %>
+<%#= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
