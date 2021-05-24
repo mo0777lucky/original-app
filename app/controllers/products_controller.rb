@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   #before_action :authenticate_user!, except: [:index, :show]
   
   def index
-    #@products = Product.all
+    @products = Product.all
   end
 
   def new
@@ -16,6 +16,16 @@ class ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @product = Product.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private
