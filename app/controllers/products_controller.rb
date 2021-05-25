@@ -20,6 +20,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
   end
 
   def edit
@@ -47,5 +49,11 @@ class ProductsController < ApplicationController
   private
   def product_params
     params.require(:product).permit(:title, :category_id, :description, :prefecture_id, :municipality, :image).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
