@@ -1,27 +1,27 @@
 <%= form_with model: @product, local: true do |f|%>
   <div class="field">
     <%= f.label :title, "タイトル" %><br />
-    <%= f.text_field :title, class: :form__text, id:"product_title" %>
+    <%= f.text_field :title, class: :form__text, id:"product_title", placeholder:"○○○○に行ってきた!!   ~□□の△△体験記~" %>
   </div>
 
   <div class="field">
-    <%= f.label :category_id, "ジャンル" %><br />
-    <%= f.text_field :category_id, id:"product_category_id" %>
+    <%= f.label :category_id, "カテゴリー" %><br />
+     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"product-category"}) %>
   </div>
 
   <div class="field">
     <%= f.label :prefecture_id, "場所(都道府県)" %><br />
-    <%= f.text_field :prefecture_id, id:"product_prefecture_id" %>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"product-prefecture"}) %>
   </div>
 
   <div class="field">
     <%= f.label :municipality, "場所(市区町村)" %><br />
-    <%= f.text_field :municipality, class: :form__text, id:"product_municipality" %>
+    <%= f.text_field :municipality, class: :form__text, id:"product_municipality", placeholder:"例）○○市□□町、 ○○区□□丁目△△坂" %>
   </div>
 
   <div class="field">
     <%= f.label :description, "今回紹介するのは…" %><br />
-    <%= f.text_area :description, class: :form__text, id:"product_description" %>
+    <%= f.text_area :description, class: :form__text, id:"product_description", placeholder:"例）2020年秋頃に行った観光地の自然公園です。紅葉が見頃を迎えているというニュースを見て、行ってきました！交通手段は車で、近くの駐車場に止めたため、駐車料金だけかかりました。平日のお昼過ぎだったからか、人は思ったほどおらず、ゆっくりと自然の中を歩くことができました。もう少ししたら秋になるため、おすすめです。（上限 1,000文字まで）" ,maxlength:"1000" %>
   </div>
 
   <div class="field">
@@ -33,4 +33,3 @@
     <%= f.submit "保存する", class: :form__btn  %>
   </div>
 <% end %>
-<%#= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>

@@ -1,16 +1,48 @@
-class Category < ActiveHash::Base
-  self.data = [
-    { id: 1, name: '--' },
-    { id: 2, name: '地域公園' },
-    { id: 3, name: '自然公園' },
-    { id: 4, name: '水・川・池など' },
-    { id: 5, name: '山・登山・ハイキングなど' },
-    { id: 6, name: '庭園' },
-    { id: 7, name: '遊歩道' },
-    { id: 8, name: '展望台' },
-    { id: 9, name: 'その他' },
-  ]
+<div class="product__image">
+        <%= image_tag @product.image %>
+      </div>
+      <div class="product__body">
+        <div class="product__detail">
+          <p class="detail__title">ジャンル</p>
+          <p class="detail__message">
+            <%= @product.category_id. %>
+          </p>
+        </div>
+        <div class="product__detail">
+          <p class="detail__title">今回オススメするところのポイント!!</p>
+          <p class="detail__message">
+            <%= @product.description %>
+          </p>
+        </div>
+         <div class="product__detail">
+          <p class="detail__title">場所(都道府県)</p>
+          <p class="detail__message">
+            <%= @product.prefecture_id. %>
+          </p>
+        </div>
+         <div class="product__detail">
+          <p class="detail__title">場所(市区町村)</p>
+          <p class="detail__message">
+            <%= @product.municipality %>
+          </p>
+        </div>
+      </div>
+      <div class="product__comments">
+        <% if user_signed_in? %>
+          <%= form_with model: [@product, @comment], local: true do |f|%>
+            <div class="field">
+              <%= f.label :text, "コメント" %><br />
+              <%= f.text_field :text, id:"comment_text" %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <% end %> 
+        <% end %>
+        
 
-  include ActiveHash::Associations
-  has_many :products
-end
+        
+      </div>
+    </div>
+  </div>
+</main>

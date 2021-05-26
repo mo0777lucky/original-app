@@ -11,14 +11,15 @@
           <%= link_to "削除する", product_path(@product.id), class: :product__btn, method: :delete %>
         </div>
       <% end %>
+
       <div class="product__image">
         <%= image_tag @product.image %>
       </div>
       <div class="product__body">
         <div class="product__detail">
-          <p class="detail__title">ジャンル</p>
+          <p class="detail__title">カテゴリー</p>
           <p class="detail__message">
-            <%= @product.category_id %>
+            <%= @product.category.name %>
           </p>
         </div>
         <div class="product__detail">
@@ -30,7 +31,7 @@
          <div class="product__detail">
           <p class="detail__title">場所(都道府県)</p>
           <p class="detail__message">
-            <%= @product.prefecture_id %>
+            <%= @product.prefecture.name %>
           </p>
         </div>
          <div class="product__detail">
@@ -52,6 +53,7 @@
             </div>
           <% end %> 
         <% end %>
+
         <ul class="comments_lists">
           <% @comments.each do |comment| %>
             <li class="comments_list">
