@@ -47,6 +47,12 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @products = Product.search(params[:keyword])
+    #@products = Product.search(params[:prefecture_id])
+    #@products = Product.find(params[:prefecture_id])
+  end
+
   private
   def product_params
     params.require(:product).permit(:title, :category_id, :description, :prefecture_id, :municipality, :image).merge(user_id: current_user.id)
