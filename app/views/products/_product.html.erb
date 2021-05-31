@@ -3,9 +3,7 @@
   <div class="card__body">
     <%= link_to product.title, product_path(product.id), method: :get, class: :card__title%>
     <p class="card__summary">
-    <%= product.category_id %>
-      <%#= product.category.name %>
-      <%#= link_to @product.category.name, product_path(product.id), method: :get %>
+    <%= product.prefecture.name %>
     </p>
     <%= link_to product.user.nickname, user_path(product.user.id), class: :card__user %>
   </div>

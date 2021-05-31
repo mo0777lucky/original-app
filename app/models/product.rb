@@ -16,4 +16,20 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_one_attached :image
+
+  def self.search(search)
+    if search != ""
+      Product.where('title LIKE(?)', "%#{search}%")
+    else
+      Product.all
+    end
+  end
+
+  #def self.search(prefecture_id)
+  #if search != ""
+    #Product.where("%#{prefecture_id}%")
+  #else
+    #Product.all
+  #end
 end
+
