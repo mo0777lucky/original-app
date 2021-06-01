@@ -15,7 +15,8 @@
           <%= f.label :password, "パスワード（6文字以上）" %><br />
           <%= f.password_field :password, id:"user_password", autocomplete: "current-password" %>
         </div>
-        
+          <%= link_to "パスワードを忘れた場合はこちら", edit_user_password_path, class: :greeting2__link %>
+
         <div class="actions">
           <%= f.submit "ログイン", class: :form__btn %>
         </div>
