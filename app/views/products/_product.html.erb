@@ -2,9 +2,15 @@
   <%= link_to image_tag(product.image, class: :card__img ), product_path(product.id) %>
   <div class="card__body">
     <%= link_to product.title, product_path(product.id), method: :get, class: :card__title%>
-    <p class="card__summary">
-    <%= product.prefecture.name %>
-    </p>
-    <%= link_to product.user.nickname, user_path(product.user.id), class: :card__user %>
+      <p class="card__summary">
+        <%= product.prefecture.name %>
+      </p>
+      <%= link_to product.user.nickname, user_path(product.user.id), class: :card__user %>
   </div>
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>Goo👍 !! 0</span>
+      </div>
+    </div>
 </div>

@@ -2,8 +2,16 @@
   <div class="inner">
     <div class="user__wrapper">
       <h2 class="page-heading">
-        <%= "ユーザー名さんの情報"%>
+        <%= "#{@user.nickname}さんの情報" %>
       </h2>
+
+      <div class="actions">
+        <%#= link_to @products.nickname, edit_user_path(@products.user_id), class: :product__user %>
+          <%if user_signed_in? && current_user.id == @user.id%>
+            <%= link_to "編集", edit_user_path(@user.id), class: :form1__btn, method: :get %>
+          <% end %>
+      </div>
+
       <table class="table">
         <tbody>
           <tr>
@@ -14,7 +22,6 @@
             <th class="table__col1">プロフィール</th>
             <td class="table__col2"><%= @user.profile %></td>
           </tr>
-          
         </tbody>
       </table>
       <h2 class="page-heading">

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     #member do
       #get 'search'
     #end
-    resources :comments, only: :create
+    resources :comments, only: [:create]
   end
-  resources :users, only: :show
+  resources :users, only: [:show, :edit, :update]
 end
