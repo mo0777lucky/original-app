@@ -34,17 +34,22 @@ RSpec.describe Product, type: :model do
       it 'category_id選択が--では投稿できない' do
         @product.category_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include ("カテゴリーを選択してください")
+        expect(@product.errors.full_messages).to include ("Category must be other than 1")
       end
       
       it 'descriptionが空では投稿できない' do
-        @item.description = ''
-        @item.valid?
-        expect(@item.errors.full_messages).to include ("Description can't be blank")
+        @product.description = ''
+        @product.valid?
+        expect(@product.errors.full_messages).to include ("Description can't be blank")
       end
 
-      it 'descriptionが1000字以上だと投稿できない' do
-        @product.description = 1000
+      #it "descriptionが1001文字以上の場合は登録できない" do
+        #product = Product.new(description: "あ" * 1001)
+        #expect(product.invalid?).to include ("Description be less than or equal to 1000 length")
+      #end
+
+      it 'descriptionが1001字以上だと投稿できない' do
+        @product.description = 1001
         @product.valid?
         expect(@product.errors.full_messages).to include ("Description be less than or equal to 1000 length")
       end
@@ -52,19 +57,19 @@ RSpec.describe Product, type: :model do
       it 'prefecture_idが空では投稿できない' do
         @product.prefecture_id = ''
         @product.valid?
-        expect(@product.errors.full_messages).to include ("Prefecture id can't be blank")
+        expect(@product.errors.full_messages).to include ("Prefecture can't be blank")
       end
 
       it 'prefecture_id選択が--は投稿できない' do
         @product.prefecture_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include ("発送元の地域を選択してください")
+        expect(@product.errors.full_messages).to include ("Prefecture must be other than 1")
       end
   
       it 'municipalityが空では投稿できない' do
         @product.municipality = ''
         @product.valid?
-        expect(@product.errors.full_messages).to include ("Municipality id can't be blank")
+        expect(@product.errors.full_messages).to include ("Municipality can't be blank")
       end
 
       it 'userが紐付いていないと保存できないこと' do
@@ -75,3 +80,5 @@ RSpec.describe Product, type: :model do
     end
   end
 end
+
+#Prefecture must be other than 1

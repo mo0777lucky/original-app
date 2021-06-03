@@ -2,10 +2,10 @@ FactoryBot.define do
   
   factory :product do
     title         {"自然公園に行ってきた！"}
-    category_id   {５}
+    category_id   {2}
     description   {"あああああああああああああああああ"}
-    prefecture_id {５}
-    municipality  {東京都渋谷区}
+    prefecture_id {2}
+    municipality  {"渋谷区"}
     
     association :user
 
