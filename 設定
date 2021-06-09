@@ -1,13 +1,14 @@
 <% if user_signed_in? %>
-    <% if tweet.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
-        <p><span>お気に入り解除: </span><%=link_to tweet.favorites.count, tweet_favorites_path(tweet.id), method: :delete %></p>
+  <% if product.favorite_user(current_user.id) %>
+  <%#= product.favorites.length %>
+  <div class="favorite-link" id="favorite-link-<%= product.id %>">
+    <% if current_user.favorites.find_by(product_id: product.id) %>
+      <%= link_to unfavorite_path(product.id), method: :delete, remote: true do %>
+          <div class = "favorite__btn">Goo!!<%= image_tag "heart5.png" ,class:"icon" ,width:"27",height:"27"%><%= product.favorites.count %></div>
+      <% end %>
     <% else %>
-        <p><span>お気に入り登録: </span><%=link_to tweet.favorites.count, tweet_favorites_path(tweet.id), method: :post %></p>
+      <%= link_to favorite_path(product.id), method: :post, remote: true do %>
+          <div class = "favorite__btn">Goo!!<%= image_tag "heart4.png" ,class:"icon" ,width:"27",height:"27"%><%= product.favorites.count %></div>
+      <% end %>
     <% end %>
-  <% else %>
-    <p><span>お気に入り数: </span><%= tweet.favorites.count %></p>
-  <% end %>
-  <!-- ここまで -->
-<% end %>
-
-
+  </div>

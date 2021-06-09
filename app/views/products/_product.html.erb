@@ -7,7 +7,7 @@
       </p>
       <%= link_to product.user.nickname, user_path(product.user.id), class: :card__user %>
       <td id="favorite-<%= product.id %>">
-        <%= render partial: 'favorites/favorite', locals: { product: product } %>
+        <%= render 'favorites/favorite', product: product %>
       </td>
   </div>
 </div>

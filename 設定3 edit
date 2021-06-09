@@ -1,36 +1,22 @@
 <% if user_signed_in? %>
-  <% if current_user.favorites.find_by(item_id: item.id) %>
-    <%= link_to item_favorites_path(item.id), method: :delete, remote: true do %>
-      <div class="icon">
-        <%= icon('fa', 'star') %>
-      </div>
-      <div class="text">
-        <%= text('いいね！') %>
-      </div>
-      <div class="count">
-        <%= item.favorites.count %>
-      </div>
-    <% else %>
-      <%= link_to item_favorites_path(item.id), method: :post, remote: true do %>
-      <div class="icon">
-        <%= icon('fa', 'star') %>
-      </div>
-      <div class="text">
-        <%= text('いいね！') %>
-      </div>
-      <div class="count">
-        <%= item.favorites.count %>
-      </div>
+  <% if product.favorite_user(current_user.id) %>
+    <%= button_to product_favorite_path(favorite, product_id: product.id), method: :delete, id: "favorite-btn", remote: true do %>
+      <%#= image_tag("icon_heart4.png") %>
+      <%= image_tag "heart4.png" ,class:"icon" ,width:"27",height:"27"%>
+      <span>Goo!!<%= product.favorites_count %>
+      </span>
     <% end %>
   <% else %>
-  <%= link_to new_user_session_path do %>
-    <div class="icon">
-      <%= icon('fa', 'star') %>
-    </div>
-    <div class="text">
-      <%= text('いいね！') %>
-    </div>
-    <div class="count">
-      <%= item.favorites.count %>
-    </div>
+    <%= button_to product_favorites_path(product), id: "favorite-btn", remote: true do %>
+      <%#= image_tag("icon_heart5.svg") %>
+      <%= image_tag "heart5.png" ,class:"icon" ,width:"27",height:"27"%>
+      <span>Goo!!<%= product.favorites_count %>
+      </span>
+    <% end %>
   <% end %>
+<% else %>
+  <%#= image_tag("icon_heart5.svg") %>
+  <%= image_tag "heart5.png" ,class:"icon" ,width:"27",height:"27"%>
+    <span>Goo!!<%= product.favorites_count %>
+    </span>
+<% end %>

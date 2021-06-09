@@ -52,3 +52,10 @@
         <%= item.favorites.count %>
       </div>
     <% else %>
+
+
+      <% if current_user.favorited_by?(product.id) %>
+  <td><%= link_to 'いいね済', product_favorite_path(product.id), method: :DELETE %> <%= product.favorites.count %></td>
+<% else %>
+  <td><%= link_to 'いいね', product_favorites_path(product.id), method: :POST %> <%= product.favorites.count %></td>
+<% end %>
