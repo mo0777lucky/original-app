@@ -1,0 +1,61 @@
+
+- @posts.each do |post|
+  - if logged_in?  # ログイン確認
+    - if current_user.own?(post)  # 所有を確認
+      = link_to post_path(post), method: :delete do
+        = icon 'far', 'trash-alt' # ゴミ箱アイコン
+      = link_to edit_post_path(post) do
+        = icon 'far', 'edit' # 編集アイコン
+    - else
+      - if current_user&.like?(post) # すでにいいね！してるか確認
+        = link_to like_path(current_user.likes.find_by(post: post)), method: :delete do
+        = icon 'fa', 'heart' # ハート（黒）
+      - else
+        = link_to likes_path(post: post), method: :post do
+          = icon 'far', 'heart' # ハート（白）
+
+
+<% @products.each do |product| %>
+  <% if logged_in? %>
+    <% if current_user.own?(product) %>
+      <%= link_to product_path(product), method: :delete do %>
+        <div class="icon">
+        <%= icon('far', 'trash-alt') %>
+      </div>
+      <%= link_to edit_product_path(product) do %>
+        <div class="icon">
+        <%= icon('far', 'edit') %>
+        </div>
+    <% else %>
+       <% if current_user&.like?(product) %>
+         <%= link_to favorite_path(current_user.favorites.find_by(product: product)), method: :delete, remote: ture do %>
+         <div class="icon">
+           <%= icon('far', 'heart')%>
+         </div> 
+       <% else %>
+        <%= link_to favorites_path(product: product), method: :product, remote: ture do %>
+        <div class="icon">
+        <%= icon('far', 'heart')%>
+        </div>
+       <% end %>
+    <% end %> 
+
+        <% if current_user.favorites.find_by(item_id: item.id) %>
+        <%= link_to item_favorites_path(item.id), method: :delete, remote: true do %>
+      <div class="icon">
+        <%= icon('fa', 'star') %>
+      </div>
+      <div class="text">
+        <%= text('いいね！') %>
+      </div>
+      <div class="count">
+        <%= item.favorites.count %>
+      </div>
+    <% else %>
+
+
+      <% if current_user.favorited_by?(product.id) %>
+  <td><%= link_to 'いいね済', product_favorite_path(product.id), method: :DELETE %> <%= product.favorites.count %></td>
+<% else %>
+  <td><%= link_to 'いいね', product_favorites_path(product.id), method: :POST %> <%= product.favorites.count %></td>
+<% end %>
