@@ -23,16 +23,13 @@
             <div class="nav__right">
               <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout, method: :delete %>
               <%= link_to "新規投稿", new_product_path, class: :nav__btn %>
-               <//div>
+            <div>
                <div class="nav__right2">
-                <%= form_with model: @product, local: true do |f|%>
-                <//div class="field">
-                  <%#= f.label :prefecture_id, "都道府県から検索する" %><br />
-                  <%= form_with(url: search_products_path, local: true, method: :get, class: "search-form") do |form| %>
-                    <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box1", id:"product-prefecture"}) %>
-                    <%= form.submit "検索", class: "search-btn" %>
-                    <%# class:"select_box1" %>
-                 <% end %>
+                 <%= form_with model: @product, local: true do |f|%>
+                  <%#= form_with(url: search_products_path, local: true, method: :get, class: "search-form") do |form| %>
+                    <%#= form.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box1", id:"product-prefecture"}) %>
+                    <%#= form.submit "検索", class: "search-btn" %>
+                 <%# end %>
                   <%#= render partial: "product", locals: { product: products } %>
                   <%#= render partial: 'product', collection: @products %>
                </div>

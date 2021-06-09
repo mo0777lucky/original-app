@@ -40,6 +40,7 @@
             <%= @product.municipality %>
           </p>
         </div>
+
       </div>
       <div class="product__comments">
         <% if user_signed_in? %>
@@ -59,6 +60,7 @@
             <li class="comments_list">
               <%= comment.text %>
               <%= link_to comment.user.nickname, user_path(comment.user.id), class: :comment_user %>
+              <%= comment.created_at.to_s(:datetime_jp) %>
             </li>
           <% end %>
         </ul>

@@ -1,51 +1,22 @@
-<%= form_with model: @product, url:products_path, local: true do |f| %>
-  <div class="article-box">
-    記事を投稿する
-    <%= f.text_field :title, class:"title", placeholder:"タイトル" %>
-    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"product-category"}) %>
-    <%= f.text_area :text, class:"text", placeholder:"テキスト" %>
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"product-prefecture"}) %>
-    <%= f.submit "投稿する" ,class:"btn" %>
-  </div>
-<% end %>
-
-    <%= form_with model: @product, url:products_path, local: true do |f| %>
-      <div class="product__image">
-      <div class="click-upload">
-        <%= f.file_field :image, id:"product-image" %>
-      </div>
-
-
-      <div class="product__body">
-        <div class="product__detail">
-          <p class="detail__title">ジャンル</p>
-          <p class="detail__message">
-            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"product-category"}) %>
-          </p>
-        </div>
-
-        <div class="product__detail">
-          <p class="detail__title">今回オススメするところのポイント!!</p>
-          <p class="detail__message">
-            <%= f.text_area :description, placeholder:"例）2020年秋頃に行った観光地の自然公園です。紅葉が見頃を迎えているというニュースを見て、行ってきました！交通手段は車で、近くの駐車場に止めたため、駐車料金だけかかりました。平日のお昼過ぎだったからか、人は思ったほどおらず、ゆっくりと自然の中を歩くことができました。もう少ししたら秋になるため、おすすめです。（上限 1,000文字まで）" ,maxlength:"1000" %>
-          #class:"text"
-          </p>
-
-        </div>
-         <div class="product__detail">
-          <p class="detail__title">場所(都道府県)</p>
-          <p class="detail__message">
-            <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"product-prefecture"}) %>
-          </p>
-        </div>
-
-         <div class="product__detail">
-          <p class="detail__title">場所(市区町村)</p>
-          <p class="detail__message">
-            <%= f.text_field :municipality, placeholder:"例）○○市□□町、 △△区○○丁目□□坂" %>
-          ＃class:"title"
-          </p>
-        </div>
-      </div>
+<% if user_signed_in? %>
+  <% if product.favorite_user(current_user.id) %>
+    <%= button_to product_favorite_path(favorite, product_id: product.id), method: :delete, id: "favorite-btn", remote: true do %>
+      <%#= image_tag("icon_heart4.png") %>
+      <%= image_tag "heart4.png" ,class:"icon" ,width:"27",height:"27"%>
+      <span>Goo!!<%= product.favorites_count %>
+      </span>
     <% end %>
-        
+  <% else %>
+    <%= button_to product_favorites_path(product), id: "favorite-btn", remote: true do %>
+      <%#= image_tag("icon_heart5.svg") %>
+      <%= image_tag "heart5.png" ,class:"icon" ,width:"27",height:"27"%>
+      <span>Goo!!<%= product.favorites_count %>
+      </span>
+    <% end %>
+  <% end %>
+<% else %>
+  <%#= image_tag("icon_heart5.svg") %>
+  <%= image_tag "heart5.png" ,class:"icon" ,width:"27",height:"27"%>
+    <span>Goo!!<%= product.favorites_count %>
+    </span>
+<% end %>

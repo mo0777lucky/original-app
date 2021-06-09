@@ -1,25 +1,30 @@
-        session edit.html.erb
-        
-        <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
-        </div>
-        
-        <div class="field">
-          <%= f.label :catchphrase, "キャッチフレーズ" %><br />
-          <%= f.email_field :catchphrase, id:"user_catchphrase", autofocus: true, autocomplete: "catchphrase" %>
-        </div>
 
-        <div class="field">
-          <%= f.label :password, "パスワード再設定（6文字以上）" %><br />
-          <%= f.password_field :password, id:"user_password", autocomplete: "current-password" %>
-        </div>
 
-        <div class="field">
-          <%= f.label :password_confirmation, "パスワード再入力" %><br />
-          <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
-        </div>
+<div class="favorites" id="favorite_<%= @item.id %>">
+  <%= render 'favorites/favorite', item: @item %>
+</div>
 
-        #メールアドレスとキャチフレーズが合っていたら、パスワード設定できる。
-        #合ってなかったらまた入力させる render edit
-
+<% if user_signed_in? %>
+  <%# if @products.favorite_user(current_user.id) %>
+  <%# if current_user.already_favorited?(product) %>
+  <% if current_user != nil && already_favorited?(@products) %>
+    <%= button_to product_favorite_path(favorite, product_id: product.id), method: :delete, id: "favorite-button", remote: true do %>
+      <%= image_tag("heart4.png") %>
+      <span>
+        <%= product.favorite_count %>
+      </span>
+    <% end %>
+  <% else %>
+    <%= button_to product_favorites_path(product), id: "favorite-button", remote: true do %>
+      <%= image_tag("heart5.png") %>
+      <span>
+        <%= product.favorite_count %>
+      </span>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= image_tag("heart5.png") %>
+    <span>
+      <%= product.favorite_count %>
+    </span>
+<% end %>

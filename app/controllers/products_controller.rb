@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @comment = Comment.new
     @comments = @product.comments.includes(:user)
+    @favorite = Favorite.new
   end
 
   def edit
