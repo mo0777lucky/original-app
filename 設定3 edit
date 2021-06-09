@@ -1,51 +1,36 @@
-<%= form_with model: @product, url:products_path, local: true do |f| %>
-  <div class="article-box">
-    記事を投稿する
-    <%= f.text_field :title, class:"title", placeholder:"タイトル" %>
-    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"product-category"}) %>
-    <%= f.text_area :text, class:"text", placeholder:"テキスト" %>
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"product-prefecture"}) %>
-    <%= f.submit "投稿する" ,class:"btn" %>
-  </div>
-<% end %>
-
-    <%= form_with model: @product, url:products_path, local: true do |f| %>
-      <div class="product__image">
-      <div class="click-upload">
-        <%= f.file_field :image, id:"product-image" %>
+<% if user_signed_in? %>
+  <% if current_user.favorites.find_by(item_id: item.id) %>
+    <%= link_to item_favorites_path(item.id), method: :delete, remote: true do %>
+      <div class="icon">
+        <%= icon('fa', 'star') %>
       </div>
-
-
-      <div class="product__body">
-        <div class="product__detail">
-          <p class="detail__title">ジャンル</p>
-          <p class="detail__message">
-            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"product-category"}) %>
-          </p>
-        </div>
-
-        <div class="product__detail">
-          <p class="detail__title">今回オススメするところのポイント!!</p>
-          <p class="detail__message">
-            <%= f.text_area :description, placeholder:"例）2020年秋頃に行った観光地の自然公園です。紅葉が見頃を迎えているというニュースを見て、行ってきました！交通手段は車で、近くの駐車場に止めたため、駐車料金だけかかりました。平日のお昼過ぎだったからか、人は思ったほどおらず、ゆっくりと自然の中を歩くことができました。もう少ししたら秋になるため、おすすめです。（上限 1,000文字まで）" ,maxlength:"1000" %>
-          #class:"text"
-          </p>
-
-        </div>
-         <div class="product__detail">
-          <p class="detail__title">場所(都道府県)</p>
-          <p class="detail__message">
-            <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"product-prefecture"}) %>
-          </p>
-        </div>
-
-         <div class="product__detail">
-          <p class="detail__title">場所(市区町村)</p>
-          <p class="detail__message">
-            <%= f.text_field :municipality, placeholder:"例）○○市□□町、 △△区○○丁目□□坂" %>
-          ＃class:"title"
-          </p>
-        </div>
+      <div class="text">
+        <%= text('いいね！') %>
+      </div>
+      <div class="count">
+        <%= item.favorites.count %>
+      </div>
+    <% else %>
+      <%= link_to item_favorites_path(item.id), method: :post, remote: true do %>
+      <div class="icon">
+        <%= icon('fa', 'star') %>
+      </div>
+      <div class="text">
+        <%= text('いいね！') %>
+      </div>
+      <div class="count">
+        <%= item.favorites.count %>
       </div>
     <% end %>
-        
+  <% else %>
+  <%= link_to new_user_session_path do %>
+    <div class="icon">
+      <%= icon('fa', 'star') %>
+    </div>
+    <div class="text">
+      <%= text('いいね！') %>
+    </div>
+    <div class="count">
+      <%= item.favorites.count %>
+    </div>
+  <% end %>
