@@ -63,7 +63,7 @@ Gooは①グッドの意、②go行こうの意、③ぐーとお腹がなるま
   →再び投稿詳細画面に遷移(コメントの表示を確認できる）
   
 # ❓作成背景 どんな課題や不便なことを解決するためにこのアプリを作ったか
- | 働く20~50代の終業後の、時間や休日の時間を有効活用させたいという目的のために作成         |
+ | 働く20~50代の、終業後の時間や休日の時間を有効活用させたいという目的のために作成        |
  | -------------------------------------------------------------------------- |
  | <ニーズ>                                                                    |
  |・運動習慣をつけるきっかけが欲しい。気軽に散歩やジョギングができる公園やルートが知りたい   |
@@ -85,7 +85,7 @@ Gooは①グッドの意、②go行こうの意、③ぐーとお腹がなるま
 | ユーザー管理機能    | 新規登録・ログイン・ログアウトが可能                     |
 | ユーザー詳細表示機能 | 各ユーザーのプロフィール・投稿一覧が閲覧可能              |
 | ユーザー情報編集機能 | ログイン中、アカウント本人であればプロフィール編集が可能    |
-| 投稿機能           | 画像付きで日記投稿が可能                               |
+| 投稿機能           | 画像付きで投稿が可能                               |
 | 投稿詳細表示機能    | 各投稿詳細が詳細ページで閲覧可能                         |
 | 投稿編集・削除機能   | 投稿者本人のみ投稿編集・削除が可能                       |
 | コメント機能        | 投稿詳細ページからコメントが可能                        |
@@ -157,15 +157,16 @@ Visual Studio Code<br>
 
 
 ## products テーブル
-| Column          | Type       | Options                        |
-| --------------- | ---------- | ------------------------------ |
-| title           | string     | null: false                    |
-| image           |            |                                |
-| category_id     | integer    | null: false                    |
-| description     | text       | null: false                    |
-| prefecture_id   | integer    | null: false                    |
-| municipality    | string     | null: false                    |
-| user            | references | null: false, foreign_key: true |
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| title             | string     | null: false                    |
+| image             |            |                                |
+| category_id       | integer    | null: false                    |
+| description       | text       | null: false                    |
+| prefecture_id     | integer    | null: false                    |
+| municipality      | string     | null: false                    |
+| recommendation_id | integer    | null: false                    |
+| user              | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user

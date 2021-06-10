@@ -40,8 +40,12 @@
             <%= @product.municipality %>
           </p>
         </div>
+        <div class="product__detail">
+          <p class="detail__title">オススメ度</p>
+          <p class="detail__message">
+            <%= @product.recommendation.name %>
+        </div>
 
-      </div>
       <div class="product__comments">
         <% if user_signed_in? %>
           <%= form_with model: [@product, @comment], local: true do |f|%>
