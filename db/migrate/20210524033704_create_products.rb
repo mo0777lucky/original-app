@@ -7,7 +7,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.integer    :prefecture_id,     null: false 
       t.string     :municipality,      null: false 
       t.integer    :recommendation_id, null: false
-      t.references :user,          null: false, foreign_key: true
+      t.references :user,              null: false, foreign_key: true
 
       t.timestamps
     end

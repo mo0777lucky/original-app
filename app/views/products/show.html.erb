@@ -1,5 +1,16 @@
 <main class="main">
   <div class="inner">
+    <div class="impressionist">
+      閲覧数：<%= @product.impressionist_count %>
+    </div>
+
+        <% if current_user.already_favorited?(@product) %>
+          <%= button_to 'いいねを取り消す', product_favorite_path(@product), method: :delete, class: :form__btn %>
+        <% else %>
+          <%= button_to 'いいね', product_favorites_path(@product), class: :form__btn %>
+        <% end %>
+        <b>いいね件数: <%= @product.favorites.count %></b>
+
     <div class="product__wrapper">
       <p class="product__hedding">
         <%= @product.title%>
@@ -43,7 +54,8 @@
         <div class="product__detail">
           <p class="detail__title">オススメ度</p>
           <p class="detail__message">
-            <%= @product.recommendation.name %>
+          <%#= @product.recommendation.name %>
+          </p>
         </div>
 
       <div class="product__comments">

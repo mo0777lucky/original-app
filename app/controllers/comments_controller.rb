@@ -18,6 +18,3 @@ class CommentsController < ApplicationController
   end
 end
 
-#redirect_to '/layouts/application'
-    #else
-      #render 'new'

@@ -22,6 +22,8 @@ class Product < ApplicationRecord
   
   has_one_attached :image
 
+  is_impressionable 
+
   def self.search(search)
     if search != ""
       Product.where('title LIKE(?)', "%#{search}%")
