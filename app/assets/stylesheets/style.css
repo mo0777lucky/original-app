@@ -305,19 +305,20 @@ a {
 .product__btn{
   display: block;
   padding: 0.4em 1.6em;
-  font-size: 0.4em;
-  color: #999;
+  font-size: 0.8em;
+  color: #2C7CFF;
   text-decoration: none;
   user-select: none;
-  border: 1px #999 solid;
+  border: 1px #2C7CFF solid;
   border-radius: 3px;
   transition: 0.4s ease;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   margin: 0 4px;
 }
 
 .product__btn:hover{
   color: #fff;
-  background: #999;
+  background:#2C7CFF;
 }
 
 .product__comments{
@@ -465,4 +466,16 @@ a {
   .table{
     width: 100%;
   }
+}
+
+
+.iine__button{
+  background: linear-gradient(to right, #feb400, #FFE300);
+  line-height: 42px;
+  color: #6d3701;
+  font-size: 14px;
+  display: inline-block;
+  padding: 0 18px;
+  border-radius: 100px;
+  font-weight: bold;
 }

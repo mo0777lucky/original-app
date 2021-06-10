@@ -5,6 +5,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :recommendation_id, "オススメ度" %><br />
+     <%= f.collection_select(:recommendation_id, Recommendation.all, :id, :name, {}, {class:"select-box", id:"product-recommendation"}) %>
+  </div>
+
+  <div class="field">
     <%= f.label :category_id, "カテゴリー" %><br />
      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"product-category"}) %>
   </div>
