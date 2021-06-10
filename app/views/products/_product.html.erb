@@ -6,9 +6,14 @@
         <%= product.prefecture.name %>
       </p>
       <p>
-        オススメ度<%= product.recommendation.name %>
+        オススメ度<%#= product.recommendation.name %>
       </p>
-      <%#= link_to product.user.nickname, user_path(product.user.id), class: :card__user %>
+      <div class="favorite-btn">
+        <%#= image_tag "star.png" ,class:"icon" ,width:"20",height:"20"%>
+        <span>Goo👍!!<%= product.favorited_users.count %></span>
+      </div>
+
+      <%= link_to product.user.nickname, user_path(product.user.id), class: :card__user %>
         <!--div class="option">  
           <div class="favorite-btn">
             <%= image_tag "star.png" ,class:"icon" ,width:"20",height:"20"%>

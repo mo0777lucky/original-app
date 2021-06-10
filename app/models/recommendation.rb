@@ -1,5 +1,4 @@
 class Recommendation < ActiveHash::Base
-  
   self.data = [
     { id: 1, name: 'オススメ度を選択' },
     { id: 2, name: '⭐' },

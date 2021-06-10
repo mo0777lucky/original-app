@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  
+  impressionist :actions => [:show]
+
   def index
     @products = Product.all
-    @products = Product.order("created_at DESC")
+    @products = Product.order("updated_at DESC")
   end
 
   def new
@@ -23,6 +24,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @comment = Comment.new
     @comments = @product.comments.includes(:user)
+    impressionist(@product, nil, unique: [:session_hash])
     @favorite = Favorite.new
   end
 
@@ -50,18 +52,12 @@ class ProductsController < ApplicationController
 
   def search
     @products = Product.search(params[:keyword])
-    #@products = Product.search(params[:prefecture_id])
-    #@products = Product.find(params[:prefecture_id])
   end
 
   private
   def product_params
     params.require(:product).permit(:title, :category_id, :description, :prefecture_id, :municipality, :recommendation_id, :image).merge(user_id: current_user.id)
   end
-
-  #def collect_params
-    #params.permit(:url, :prefecture_id)
-  #end
 
   def move_to_index
     unless user_signed_in?

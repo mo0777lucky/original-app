@@ -13,6 +13,9 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorited_products, through: :favorites, source: :product 
   
+  def already_favorited?(product)
+    self.favorites.exists?(product_id: product.id)
+  end
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX
