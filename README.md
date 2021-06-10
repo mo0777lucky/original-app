@@ -101,17 +101,9 @@ Gooは①グッドの意、②go行こうの意、③ぐーとお腹がなるま
 
 
 # 💻ローカルでの動作方法
-$ git clone https://github.com/liz539z/global-day.git 
-$ cd global-day 
-$ bundle install 
-$ rails db:create 
-$ rails db:migrate 
-$ rails s 
-👉 http://localhost:3000
-
-$ cd projects
-$ cd original-app 
-$ rails s 
+$ cd projects<br>
+$ cd original-app<br>
+$ rails s<br>
 👉 http://localhost:3000
 
 
@@ -132,7 +124,8 @@ Visual Studio Code<br>
 
 # 💪課題や今後実装したい機能
 ・コメントの即時出力機能<br>
-・複数枚写真投稿機能
+・複数枚写真投稿機能<br>
+・パスワードの再設定機能
 
 
 # 🔩DB設計
