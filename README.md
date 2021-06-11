@@ -26,37 +26,43 @@ Gooは①グッドの意、②go行こうの意、③ぐーとお腹がなるま
 ## 👤ユーザーに関するもの
 ☆トップページから右上「新規登録・ログインボタン」をクリック<br>
   →新規登録・ログイン後、再びトップページへ遷移
+[![Image from Gyazo](https://i.gyazo.com/a1c28a7bf3b7994c8ad709b5e9f4c641.gif)](https://gyazo.com/a1c28a7bf3b7994c8ad709b5e9f4c641)
 
-☆トップページから右上「新規登録・ログインボタン」をクリック<br>
-  →新規登録・ログイン後、再びトップページへ遷移
+[![Image from Gyazo](https://i.gyazo.com/91d75b5ae4fcbb15988285366187a562.gif)](https://gyazo.com/91d75b5ae4fcbb15988285366187a562)
 
 ☆ユーザー名をクリック<br>
   →ユーザー詳細表示ページへ遷移
+[![Image from Gyazo](https://i.gyazo.com/f0e53817008217a5b827bd4c302e31e4.gif)](https://gyazo.com/f0e53817008217a5b827bd4c302e31e4)
 
 ☆ユーザー詳細表示ページの「編集ボタン」をクリック (ログイン中、アカウント本人であれば可能)<br>
   →ユーザー情報編集ページへ遷移
+[![Image from Gyazo](https://i.gyazo.com/786a22257d05aac461d98d102299f2ab.gif)](https://gyazo.com/786a22257d05aac461d98d102299f2ab)
 
 ☆ユーザー情報編集ページにおいて、必要事項を編集した後「更新ボタン」をクリック<br>
   →ユーザー詳細表示ページへ遷移(その後、再ログインが必要)
-
-
+[![Image from Gyazo](https://i.gyazo.com/a2b884e63201739e9189cbece44c9d95.gif)](https://gyazo.com/a2b884e63201739e9189cbece44c9d95)
 
 
 ## 🗒投稿に関するもの
 ☆新規投稿は右上「新規投稿ボタン」をクリック<br>
   →新規投稿ページへ遷移
+[![Image from Gyazo](https://i.gyazo.com/6efb438a541986d06a5fb05f749e49a0.gif)](https://gyazo.com/6efb438a541986d06a5fb05f749e49a0)
 
 ☆必要事項を全て記入し、「投稿ボタン」をクリック<br>
   →投稿完了後、トップページへ遷移
 
+
 ☆投稿写真をクリック<br>
   →投稿詳細表示ページへ遷移
+[![Image from Gyazo](https://i.gyazo.com/ecdb58bed8c5e58f67d495d5d649b755.gif)](https://gyazo.com/ecdb58bed8c5e58f67d495d5d649b755)
 
 ☆投稿詳細表示ページの「編集ボタン」をクリック (ログイン中、アカウント本人であれば可能)<br>
   →投稿編集ページへ遷移
+[![Image from Gyazo](https://i.gyazo.com/2c4e84c0e7b1b9be9242789010377307.gif)](https://gyazo.com/2c4e84c0e7b1b9be9242789010377307)
 
 ☆投稿編集ページにおいて、必要事項を編集した後「更新ボタン」をクリック<br>
   →トップページへ遷移
+
 
 ☆投稿詳細表示ページの「削除ボタン」をクリック (ログイン中、アカウント本人であれば可能)<br>
   →トップページへ遷移
