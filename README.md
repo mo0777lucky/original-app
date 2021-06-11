@@ -1,4 +1,5 @@
 # README
+[![Image from Gyazo](https://i.gyazo.com/db1b994e310354f3043a79eb5bc0b972.png)](https://gyazo.com/db1b994e310354f3043a79eb5bc0b972)
 
 # 🌏 アプリ名
 <街のお散歩アプリ> おさんぽ_Goo
@@ -39,6 +40,8 @@ Gooは①グッドの意、②go行こうの意、③ぐーとお腹がなるま
   →ユーザー詳細表示ページへ遷移(その後、再ログインが必要)
 
 
+
+
 ## 🗒投稿に関するもの
 ☆新規投稿は右上「新規投稿ボタン」をクリック<br>
   →新規投稿ページへ遷移
@@ -59,13 +62,20 @@ Gooは①グッドの意、②go行こうの意、③ぐーとお腹がなるま
   →トップページへ遷移
 
 
+☆トップページでキーワードをいれ「検索ボタン」をクリック<br>
+  →トップページへ遷移
+[![Image from Gyazo](https://i.gyazo.com/cb3c5ef41968ef13e374e4acd95c5dec.gif)](https://gyazo.com/cb3c5ef41968ef13e374e4acd95c5dec)
+
+
 ## 📝コメントに関するもの
 ☆ 投稿詳細画面からコメントを記入後「送信ボタン」をクリック<br>
+[![Image from Gyazo](https://i.gyazo.com/997f6e2346af085f8de49646f2d72eb3.gif)](https://gyazo.com/997f6e2346af085f8de49646f2d72eb3)
   →再び投稿詳細画面に遷移(コメントの表示を確認できる）
 
 
   ## 👍いいねに関するもの
 ☆ 投稿詳細画面から「いいねボタン」をクリック<br>
+[![Image from Gyazo](https://i.gyazo.com/c4cbb0c6e702610877205918d172920f.gif)](https://gyazo.com/c4cbb0c6e702610877205918d172920f)
   →再び投稿詳細画面に遷移(ボタンの表示の切り替わりと数のカウントを確認できる）
 
 

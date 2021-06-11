@@ -5,20 +5,14 @@
       <p class="card__summary">
         <%= product.prefecture.name %>
       </p>
-      <p>
+      <!--p>
         オススメ度<%#= product.recommendation.name %>
-      </p>
+      </p-->
       <div class="favorite-btn">
         <%#= image_tag "star.png" ,class:"icon" ,width:"20",height:"20"%>
         <span>Goo👍!!<%= product.favorited_users.count %></span>
       </div>
 
       <%= link_to product.user.nickname, user_path(product.user.id), class: :card__user %>
-        <!--div class="option">  
-          <div class="favorite-btn">
-            <%= image_tag "star.png" ,class:"icon" ,width:"20",height:"20"%>
-            <span>お気に入り 0</span>
-          </div>
-        </div-->
   </div>
 </div>
