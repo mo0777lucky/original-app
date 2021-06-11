@@ -138,6 +138,10 @@ Visual Studio Code<br>
 ・パスワードの再設定機能
 
 
+# ER図
+[![Image from Gyazo](https://i.gyazo.com/f133de2a0f65745da33bad56c093697f.png)](https://gyazo.com/f133de2a0f65745da33bad56c093697f)
+
+
 # 🔩DB設計
 ## users テーブル
 | Column     | Type   | Options     |
