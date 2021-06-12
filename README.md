@@ -201,4 +201,3 @@ Visual Studio Code<br>
 - belongs_to :user
 - belongs_to :product
 
-[Gyazo-3.8.1 (4) 4.dmg.zip](https://github.com/mo0777lucky/original-app/files/6641982/Gyazo-3.8.1.4.4.dmg.zip)]
