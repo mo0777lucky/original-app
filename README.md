@@ -200,3 +200,7 @@ Visual Studio Code<br>
 ### Association
 - belongs_to :user
 - belongs_to :product
+
+[Gyazo-3.8.1 (4).dmg.zip](https://github.com/mo0777lucky/original-app/files/6641975/Gyazo-3.8.1.4.dmg.zip)
+[Gyazo-3.8.1 (2).dmg.zip](https://github.com/mo0777lucky/original-app/files/6641976/Gyazo-3.8.1.2.dmg.zip)
+[Gyazo-3.8.1 (3).dmg.zip](https://github.com/mo0777lucky/original-app/files/6641979/Gyazo-3.8.1.3.dmg.zip)
