@@ -54,7 +54,7 @@ Gooは①グッドの意、②go行こうの意、③ぐーとお腹がなるま
 
 ☆投稿写真をクリック<br>
   →投稿詳細表示ページへ遷移
-[![Image from Gyazo](https://i.gyazo.com/ecdb58bed8c5e58f67d495d5d649b755.gif)](https://gyazo.com/ecdb58bed8c5e58f67d495d5d649b755)
+[![Image from Gyazo](https://i.gyazo.com/0587e11429d0df8c4399265806c3941d.gif)](https://gyazo.com/0587e11429d0df8c4399265806c3941d)
 
 ☆投稿詳細表示ページの「編集ボタン」をクリック (ログイン中、アカウント本人であれば可能)<br>
   →投稿編集ページへ遷移
