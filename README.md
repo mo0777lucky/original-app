@@ -19,7 +19,7 @@ Gooは①グッドの意、②go行こうの意、③ぐーとお腹がなるま
 
 
 # 🖥本番環境(App URL)
-
+  https://original-app-35588.herokuapp.com/
 
 # 📗利用方法
 
