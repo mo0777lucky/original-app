@@ -2,8 +2,8 @@ class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :prefecture
-  belongs_to :recommendation
 
+  
   with_options presence: true do
     validates :title
     validates :image
@@ -11,7 +11,7 @@ class Product < ApplicationRecord
     validates :municipality
   end
 
-  validates :category_id, :prefecture_id, :recommendation_id, numericality: { other_than: 1 }
+  validates :category_id, :prefecture_id, numericality: { other_than: 1 }
   
   
   belongs_to :user

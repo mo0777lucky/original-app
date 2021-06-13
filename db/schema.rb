@@ -85,7 +85,6 @@ ActiveRecord::Schema.define(version: 2021_06_10_071305) do
     t.text "description", null: false
     t.integer "prefecture_id", null: false
     t.string "municipality", null: false
-    t.integer "recommendation_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

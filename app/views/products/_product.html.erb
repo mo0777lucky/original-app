@@ -5,9 +5,7 @@
       <p class="card__summary">
         <%= product.prefecture.name %>
       </p>
-      <!--p>
-        オススメ度<%#= product.recommendation.name %>
-      </p-->
+      
       <div class="favorite-btn">
         <%#= image_tag "star.png" ,class:"icon" ,width:"20",height:"20"%>
         <span>Goo👍!!<%= product.favorited_users.count %></span>
