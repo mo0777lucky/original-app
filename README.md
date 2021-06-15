@@ -52,6 +52,8 @@ Gooは①グッドの意、②go行こうの意、③ぐーとお腹がなるま
   →投稿完了後、トップページへ遷移
 [![Image from Gyazo](https://i.gyazo.com/aaa2487a6ab89cc8d551715a1eaf7d52.gif)](https://gyazo.com/aaa2487a6ab89cc8d551715a1eaf7d52)
 
+[![Image from Gyazo](https://i.gyazo.com/aaa2487a6ab89cc8d551715a1eaf7d52.gif)](https://gyazo.com/aaa2487a6ab89cc8d551715a1eaf7d52)
+
 ☆投稿写真をクリック<br>
   →投稿詳細表示ページへ遷移
 [![Image from Gyazo](https://i.gyazo.com/0587e11429d0df8c4399265806c3941d.gif)](https://gyazo.com/0587e11429d0df8c4399265806c3941d)
