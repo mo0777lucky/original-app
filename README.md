@@ -50,9 +50,7 @@ Gooは①グッドの意、②go行こうの意、③ぐーとお腹がなるま
 
 ☆必要事項を全て記入し、「投稿ボタン」をクリック<br>
   →投稿完了後、トップページへ遷移
-[![Image from Gyazo](https://i.gyazo.com/aaa2487a6ab89cc8d551715a1eaf7d52.gif)](https://gyazo.com/aaa2487a6ab89cc8d551715a1eaf7d52)
 
-[![Image from Gyazo](https://i.gyazo.com/aaa2487a6ab89cc8d551715a1eaf7d52.gif)](https://gyazo.com/aaa2487a6ab89cc8d551715a1eaf7d52)
 
 ☆投稿写真をクリック<br>
   →投稿詳細表示ページへ遷移
@@ -64,7 +62,7 @@ Gooは①グッドの意、②go行こうの意、③ぐーとお腹がなるま
 
 ☆投稿編集ページにおいて、必要事項を編集した後「更新ボタン」をクリック<br>
   →トップページへ遷移
-[![Image from Gyazo](https://i.gyazo.com/aa87c51779be13c04bad882ed7f94845.gif)](https://gyazo.com/aa87c51779be13c04bad882ed7f94845)
+
 
 ☆投稿詳細表示ページの「削除ボタン」をクリック (ログイン中、アカウント本人であれば可能)<br>
   →トップページへ遷移
